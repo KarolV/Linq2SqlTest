@@ -21,10 +21,10 @@ namespace Linq2SqlTestApp.Test
 		[TestMethod]
 		public void GetGroupWithAffiliates_Test()
 		{
-			var @default = testApp.Groups.FirstOrDefault(x => x.Name == "test");
+			var @default = testApp.Groups.AsEnumerable().FirstOrDefault(x => x.GroupNumber == "BCVR0001308000");
 			if (@default != null)
 			{
-				CommonAssert(@default.Affiliates.ToList());
+				CommonAssert(@default.Affiliates);
 				return;
 			}
 
@@ -52,7 +52,7 @@ namespace Linq2SqlTestApp.Test
 		[TestMethod]
 		public void GetGroups_Test()
 		{
-			var result = testApp.Groups.ToList();
+			var result = testApp.Groups.AsEnumerable().ToList();
 
 			try
 			{

@@ -2,13 +2,14 @@
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
 
-namespace Linq2SqlTestApp.Model
+namespace Linq2SqlTestApp.Entity
 {
 	[Table(Name = "Group")]
 	public sealed class Group
 	{
-		private Guid _groupID;
+		private int _groupID;
 		private readonly EntitySet<Affiliate> _affiliates;
+		private string _groupNumber;
 		private string _name;
 
 		public Group()
@@ -16,11 +17,18 @@ namespace Linq2SqlTestApp.Model
 			_affiliates = new EntitySet<Affiliate>();
 		}
 
-		[Column(IsPrimaryKey = true, Storage = "_groupID", IsDbGenerated = true)]
-		public Guid GroupID
+		[Column(Name = "Identifier", IsPrimaryKey = true, Storage = "_groupID", IsDbGenerated = true)]
+		public int GroupID
 		{
 			get { return _groupID; }
 			set { _groupID = value; }
+		}
+
+		[Column(Name = "GroupNumber", Storage = "_groupNumber")]
+		public string GroupNumber
+		{
+			get { return _groupNumber; }
+			set { _groupNumber = value; }
 		}
 
 		[Column(Storage = "_name", DbType = "nvarchar(50)")]

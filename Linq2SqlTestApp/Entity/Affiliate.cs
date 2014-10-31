@@ -2,7 +2,7 @@
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
 
-namespace Linq2SqlTestApp.Model
+namespace Linq2SqlTestApp.Entity
 {
 	[Table(Name = "Affiliate")]
 	public sealed class Affiliate
@@ -10,7 +10,7 @@ namespace Linq2SqlTestApp.Model
 		#region Private Fields
 
 		private Guid _affiliateID;
-		private Guid _groupID;
+		private int _groupID;
 		private string _name;
 		private decimal _currentSalary;
 		private decimal _newSalary;
@@ -27,8 +27,8 @@ namespace Linq2SqlTestApp.Model
 			set { _affiliateID = value; }
 		}
 
-		[Column(Storage = "_groupID")]
-		public Guid GroupID
+		[Column(Storage = "_groupID", Name="GroupID")]
+		public int GroupID
 		{
 			get { return _groupID; }
 			set { _groupID = value; }

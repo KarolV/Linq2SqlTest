@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Data.Linq;
+﻿using System.Data.Linq;
 using System.Linq;
 
-using Linq2SqlTestApp.Model;
+using Linq2SqlTestApp.Entity;
 
 namespace Linq2SqlTestApp
 {
