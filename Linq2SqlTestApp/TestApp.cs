@@ -15,7 +15,10 @@ namespace Linq2SqlTestApp
 		{
 			this.dbContext =
 				new DataContext(
-					@"Data Source=(LocalDb)\v12.0;Initial Catalog=AZBE_NALG;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False");
+					@"Data Source=(LocalDb)\v12.0;Initial Catalog=AZBE_NALG;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False")
+				{
+					DeferredLoadingEnabled = true
+				};
 		}
 
 		public IQueryable<Affiliate> Affiliates

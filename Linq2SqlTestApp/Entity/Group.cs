@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
+using System.Linq;
+using System.Text;
 
 namespace Linq2SqlTestApp.Entity
 {
@@ -38,11 +41,59 @@ namespace Linq2SqlTestApp.Entity
 			set { _name = value; }
 		}
 
-		[Association(Storage = "_affiliates", OtherKey = "AffiliateID")]
+		[Association(Storage = "_affiliates", OtherKey = "GroupID")]
 		public EntitySet<Affiliate> Affiliates
 		{
 			get { return _affiliates; }
 			set { _affiliates.Assign(value); }
 		}
+
+		#region Overrides of Object + extended methods of overrides
+
+		/// <summary>
+		/// Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+		/// </summary>
+		/// <returns>
+		/// A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+		/// </returns>
+		public override string ToString()
+		{
+			return this.ToString<Group>(null);
+		}
+
+		public string ToString(bool deep)
+		{
+			return deep
+				? this.ToString<IQueryable<Affiliate>>(FormatTail)
+				: this.ToString<Group>(FormatTail);
+		}
+
+		private string ToString<T>(Func<T, string> method)
+		{
+			return string.Format("Group[{0}]: GroupNumber: '{1}', Name: '{2}'{3}",
+			                     this.GroupID,
+			                     this.GroupNumber,
+			                     this.Name,
+			                     this.Affiliates == null
+				                     ? string.Empty
+				                     : method == null
+					                     ? string.Empty
+					                     : method((T) this.Affiliates.AsQueryable()));
+		}
+
+		private static string FormatTail(Group group)
+		{
+			return string.Format(", Affiliates.Count: {0}", group.Affiliates.Count);
+		}
+
+		private static string FormatTail<T>(IQueryable<T> collection)
+		{
+			return collection.Aggregate(new StringBuilder(),
+			                            (sb, item) => sb.AppendLine(string.Format("\t- {0}", item)))
+			                 .Insert(0, "\n")
+			                 .ToString();
+		}
+
+		#endregion
 	}
 }

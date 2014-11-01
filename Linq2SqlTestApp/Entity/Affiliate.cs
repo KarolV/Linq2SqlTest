@@ -55,7 +55,7 @@ namespace Linq2SqlTestApp.Entity
 			set { _newSalary = value; }
 		}
 
-		[Association(Storage = "_group", OtherKey = "GroupID")]
+		[Association(Storage = "_group", ThisKey = "GroupID")]
 		public Group Group
 		{
 			get { return _group.Entity; }
