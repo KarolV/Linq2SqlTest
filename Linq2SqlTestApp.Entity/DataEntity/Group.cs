@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
 
-namespace Linq2SqlTestApp.Entity
+namespace Linq2SqlTestApp.Entity.DataEntity
 {
 	[Table(Name = "Group")]
 	public sealed class Group

@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq2SqlTestApp", "Linq2Sql
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq2SqlTestApp.Test", "Linq2SqlTestApp.Test\Linq2SqlTestApp.Test.csproj", "{D774ADCF-5F66-4181-949E-0F2215BA06D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq2SqlTestApp.DataStore", "Linq2SqlTestApp.DataStore\Linq2SqlTestApp.DataStore.csproj", "{3D21DBC2-862C-403F-9B1C-25AFE788122F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq2SqlTestApp.DataStore.Interface", "Linq2SqlTestApp.DataStore.Interface\Linq2SqlTestApp.DataStore.Interface.csproj", "{C07120C5-A713-4817-BBED-7DE9C572BC10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq2SqlTestApp.Entity", "Linq2SqlTestApp.Entity\Linq2SqlTestApp.Entity.csproj", "{E848FB9B-F468-4755-872D-3CD8D413CB44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{D774ADCF-5F66-4181-949E-0F2215BA06D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D774ADCF-5F66-4181-949E-0F2215BA06D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D774ADCF-5F66-4181-949E-0F2215BA06D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D21DBC2-862C-403F-9B1C-25AFE788122F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D21DBC2-862C-403F-9B1C-25AFE788122F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D21DBC2-862C-403F-9B1C-25AFE788122F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D21DBC2-862C-403F-9B1C-25AFE788122F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C07120C5-A713-4817-BBED-7DE9C572BC10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C07120C5-A713-4817-BBED-7DE9C572BC10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C07120C5-A713-4817-BBED-7DE9C572BC10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C07120C5-A713-4817-BBED-7DE9C572BC10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E848FB9B-F468-4755-872D-3CD8D413CB44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E848FB9B-F468-4755-872D-3CD8D413CB44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E848FB9B-F468-4755-872D-3CD8D413CB44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E848FB9B-F468-4755-872D-3CD8D413CB44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

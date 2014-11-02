@@ -2,7 +2,7 @@
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
 
-namespace Linq2SqlTestApp.Entity
+namespace Linq2SqlTestApp.Entity.DataEntity
 {
 	[Table(Name = "Affiliate")]
 	public sealed class Affiliate

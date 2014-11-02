@@ -58,6 +58,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Linq2SqlTestApp.Entity\Linq2SqlTestApp.Entity.csproj">
+      <Project>{E848FB9B-F468-4755-872D-3CD8D413CB44}</Project>
+      <Name>Linq2SqlTestApp.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Linq2SqlTestApp\Linq2SqlTestApp.csproj">
       <Project>{DBDCA529-E8CC-4A17-9839-B4F2279423CC}</Project>
       <Name>Linq2SqlTestApp</Name>
