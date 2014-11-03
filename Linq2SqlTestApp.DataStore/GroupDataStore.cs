@@ -35,7 +35,9 @@ namespace Linq2SqlTestApp.DataStore
 		/// <param name="entities"><see cref="IQueryable{T}"/> collection of being persisted</param>
 		public override void SaveDataEntities(IQueryable<Group> entities)
 		{
-			throw new NotImplementedException();
+			this.dbContext.SubmitChanges();
+
+			//throw new NotImplementedException();
 		}
 
 		#endregion
