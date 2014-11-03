@@ -35,7 +35,7 @@ namespace Linq2SqlTestApp.Test
 		}
 
 		[TestMethod]
-		public void GetAffiliatesNoChangedDataForGroup_Test()
+		public void GetAffiliatesNotChangedDataForGroup_Test()
 		{
 			var result = testApp.Affiliates.Where(a => a.Group.GroupNumber == defaultGroupNumber)
 								.Where(af => af.CurrentSalary == af.NewSalary);
@@ -86,10 +86,9 @@ namespace Linq2SqlTestApp.Test
 		}
 
 		[TestMethod]
-		public void GetGroupWithAffiliates_Test()
+		public void GetGroupWithAllAffiliates_Test()
 		{
-			var @default = testApp.Groups
-			                      .FirstOrDefault(x => x.GroupNumber == defaultGroupNumber);
+			var @default = testApp.Groups.Single(x => x.GroupNumber == defaultGroupNumber);
 
 			if (@default != null)
 			{

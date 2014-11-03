@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Data.Linq;
 using System.Linq;
 
-using Linq2SqlTestApp.DataStore.Interface;
 using Linq2SqlTestApp.Entity.DataEntity;
 
 namespace Linq2SqlTestApp.DataStore
@@ -21,6 +21,10 @@ namespace Linq2SqlTestApp.DataStore
 		/// <returns>Data entitiees of type <see cref="IQueryable{T}"/></returns>
 		public override IQueryable<Group> GetDataEntities()
 		{
+			var loadOptions = new DataLoadOptions();
+			loadOptions.LoadWith(GetExpressionForTableLoad(obj => obj.Affiliates));
+			this.dbContext.LoadOptions = loadOptions;
+
 			return this.dbContext.GetTable<Group>();
 		}
 

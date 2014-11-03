@@ -1,5 +1,7 @@
-﻿using System.Data.Linq;
+﻿using System;
+using System.Data.Linq;
 using System.Linq;
+using System.Linq.Expressions;
 
 using Linq2SqlTestApp.DataStore.Interface;
 
@@ -15,6 +17,16 @@ namespace Linq2SqlTestApp.DataStore
 			                 {
 				                 DeferredLoadingEnabled = true
 			                 };
+		}
+
+		protected static LambdaExpression GetExpressionForTableLoad(Expression<Func<T, object>> expression)
+		{
+			var param = Expression.Parameter(typeof (T), "p");
+			var loadDetail =
+				Expression.Lambda(Expression.Convert(Expression.Property(param, ((MemberExpression) expression.Body).Member.Name),
+				                                     typeof (object)),
+				                  param);
+			return loadDetail;
 		}
 
 		#region Implementation of IDataInstanceStore
