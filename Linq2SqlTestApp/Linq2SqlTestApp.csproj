@@ -30,13 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestApp.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Linq2SqlTestApp.DataStore.Interface\Linq2SqlTestApp.DataStore.Interface.csproj">
       <Project>{c07120c5-a713-4817-bbed-7de9c572bc10}</Project>

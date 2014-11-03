@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Configuration;
+using System.Linq;
 
 using Linq2SqlTestApp.DataStore;
 using Linq2SqlTestApp.Entity.DataEntity;
@@ -15,8 +16,7 @@ namespace Linq2SqlTestApp
 
 		public TestApp()
 		{
-			const string connectionString =
-				@"Data Source=(LocalDb)\v12.0;Initial Catalog=AZBE_NALG;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+			var connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
 
 			this.groupDataStore = new GroupDataStore(connectionString);
 			this.affiliatesDataStore = new AffiliateDataStore(connectionString);
