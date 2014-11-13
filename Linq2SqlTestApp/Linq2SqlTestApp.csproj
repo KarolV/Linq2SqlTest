@@ -38,9 +38,6 @@
     <Compile Include="TestApp.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Linq2SqlTestApp.DataStore.Interface\Linq2SqlTestApp.DataStore.Interface.csproj">
       <Project>{c07120c5-a713-4817-bbed-7de9c572bc10}</Project>
       <Name>Linq2SqlTestApp.DataStore.Interface</Name>
